@@ -1,0 +1,43 @@
+//authors: Daniel Uyematsu, Ronan Konishi, and Catherine Phu
+package org.usfirst.frc.team687.robot;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Talon;
+
+/**
+ * The VM is configured to automatically run this class, and to call the
+ * functions corresponding to each mode, as described in the IterativeRobot
+ * documentation. If you change the name of this class or the package after
+ * creating this project, you must also update the manifest file in the resource
+ * directory.
+ */
+public class Robot extends IterativeRobot {
+	Joystick joy;
+	Talon leftSpin, rightSpin;
+    public void robotInit() {
+    	joy = new Joystick(1);
+    	leftSpin = new Talon(1);
+    	rightSpin = new Talon(2);
+    }
+    public void autonomousPeriodic() {
+    }
+    public void teleopPeriodic() {
+    	if(joy.getRawButton(6)){   //sucking totes in
+    		leftSpin.set(0.2);		//spin left clockwise
+    		rightSpin.set(-0.2);	//spin right counter-clockwise
+    	} else{ //if button 6 not true
+    		leftSpin.set(0); //stop left wheel
+    		rightSpin.set(0); //stop right wheel
+    	}
+    	if(joy.getRawButton(8)){	//pushing totes out
+    		leftSpin.set(-0.2);		//spin left counter-clockwise
+    		rightSpin.set(0.2);		//spin right clockwise
+    	} else { //if button 8 not true
+    		leftSpin.set(0); //stop left wheel
+    		rightSpin.set(0); //stop right wheel
+    	}
+    }
+    public void testPeriodic() {
+    } 
+}
