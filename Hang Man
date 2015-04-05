@@ -1,1 +1,53 @@
-
+def skip_lines(x):
+    for a in range(x):
+        print ""
+def validWord(word):
+    letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "]
+    for letter in range(len(word)):
+        if word[letter] not in letters:
+            return False
+    return True
+check1 = True
+while check1:
+    name1 = raw_input("Who will make a puzzle first?")
+    name2 = raw_input("Who will guess first?")
+    if name1 == name2:
+        skip_lines(1)
+        print "hey! Make your names different!"
+        skip_lines(1)
+        print "You both can't be " + name1 + "!!"
+        skip_lines(2)
+    else:
+        check1 = False
+        skip_lines(2)
+winner = False
+while not winner:
+    skip_lines(3)
+    print "HANG MAN"
+    print "NEW GAME!"
+    print "------------------------------------------"
+    skip_lines(1)
+    print "It's " + name1 + "'s turn to make a puzzle!"
+    check2 = True
+    check3 = True
+    while check2 and check3:
+        no_cheating = raw_input("Is " + name2 + " looking away?? (y/n)")
+        if no_cheating == "y":
+            while check3:
+                print "okay then, sh...."
+                answer = raw_input("What is the secret answer????")
+                check2 = False
+                if validWord(answer):
+                    check3 = False
+                    check2 = False
+                    winner = True
+                else:
+                    print "Please put the secret word in all lowercase letters."
+        elif no_cheating == "n":
+            print "HEY!!!"
+            print "LOOK AWAY " + name2 + "!!!"
+        else:
+            print "Please put y or n"
+            
+            
+            
