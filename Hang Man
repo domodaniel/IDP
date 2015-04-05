@@ -48,6 +48,8 @@ while not winner:
             print "LOOK AWAY " + name2 + "!!!"
         else:
             print "Please put y or n"
-            
+hangman = ["      __", "     |  |", "     O  |","    \|/ |","     |  |", "    / \ |","        |","        |", " _______|_________"]
+for x in hangman:
+    print x
             
             
