@@ -1,6 +1,9 @@
 def skip_lines(x):
     for a in range(x):
         print ""
+def print_hangman(hangman):
+    for x in hangman:
+        print x
 def validWord(word):
     letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "]
     for letter in range(len(word)):
@@ -8,6 +11,14 @@ def validWord(word):
             return False
     return True
 check1 = True
+hangman = ["      __", "     |  |", "        |","        |","        |", "        |","        |","        |", " _______|_________"]
+head = "     O  |"
+body = "     |  |"
+left_arm = "    \|  |"
+right_arm = "    \|/ |"
+body2 = "     |  |"
+left_leg = "    /   |"
+right_leg = "    / \ |"
 while check1:
     name1 = raw_input("Who will make a puzzle first?")
     name2 = raw_input("Who will guess first?")
@@ -40,7 +51,6 @@ while not winner:
                 if validWord(answer):
                     check3 = False
                     check2 = False
-                    winner = True
                 else:
                     print "Please put the secret word in all lowercase letters."
         elif no_cheating == "n":
@@ -48,8 +58,9 @@ while not winner:
             print "LOOK AWAY " + name2 + "!!!"
         else:
             print "Please put y or n"
-hangman = ["      __", "     |  |", "     O  |","    \|/ |","     |  |", "    / \ |","        |","        |", " _______|_________"]
-for x in hangman:
-    print x
-            
-            
+    winner = True
+print_hangman(hangman)
+
+
+
+
