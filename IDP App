@@ -1,0 +1,21 @@
+McDfood = ["burger", "another burger"]
+def print_McDfood(food_list):
+  for a in range(leng(food_list)):
+    print food_list[a]
+a = True
+while a:
+  check = True
+  while check:
+    choice = raw_input("Would you like to find out information about McDonald's menu or look at recipes?")
+    if choice == "McDonald's Menu":
+      print "You have chosen to look at McDonald's Menu's nutrition facts."
+      check = False
+    elif choice == "recipes":
+      print "You have chosen to view recipes."
+      check = False
+    else:
+      print 'Please type "McDonald\'s Menu" or "recipes" to make your choice.'
+  check2 = True
+  if choice == "McDonald's Menu":
+    while check2:
+      McD_food = raw_input("What food would you like to find out about?" + print_McDfood(McDfood))
