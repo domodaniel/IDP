@@ -1,1 +1,10 @@
-var foods = new Object();
+var burger = new Object();
+burger.calories = 1234;
+burger.name = "burger";
+burger.ingredients = ["lettuce","tomato","patty","asdf"];
+console.log(burger.ingredients[1]);
+console.log(burger.name);
+console.log(burger.calories);
+for(i = 0; i < burger.ingredients.length; i++){
+    console.log(burger.ingredients[i]);
+}
