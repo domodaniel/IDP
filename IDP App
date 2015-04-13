@@ -1,4 +1,5 @@
 McDfood = ["burger", "another burger"]
+calories = {"burger":1234, "another burger": 2331297}
 def print_McDfood(food_list):
   for a in range(leng(food_list)):
     print food_list[a]
