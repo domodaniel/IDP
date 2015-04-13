@@ -1,11 +1,14 @@
+console.log("Welcome to HEAL\'s App!");
+console.log("We are so glad that you could veiw our website.");
+var food = ["adf",23];
 var burger = new Object();
 burger.calories = 1234;
 burger.name = "burger";
 burger.ingredients = ["lettuce","tomato","patty","asdf"];
+food.push(burger);
 var fatBurger = new Object();
 fatBurger.calories = 123456789;
 fatBurger.name = "Bacon DoubleStack TripleCheese Advocado OnionSauce Burger";
 fatBurger.ingredients = ["bacon","5 pounds of beef", "3 slices of cheese", "Onion Sauce", "Advocado"];
-var food = ["adf",23,fatBurger,burger];
-console.log(food[3].ingredients[0]);
+food.push(fatBurger);
 console.log(food[2].ingredients[2]);
