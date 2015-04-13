@@ -1,5 +1,6 @@
 console.log("Welcome to HEAL\'s App!");
 console.log("We are so glad that you could veiw our website.");
+console.log("We have information about McDonald\'s food available.");
 var food = ["adf",23];
 var burger = new Object();
 burger.calories = 1234;
