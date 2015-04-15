@@ -3,16 +3,17 @@ var skip_lines = function(a){
         console.log("");
     }
 };
+var printIngredients = function(ingredients){
+    for(i = 0; i < ingredients.length; i++) {
+        console.log(ingredients[i]);
+    }
+};
 function foodMaker(name,calories,ingredients){
     this.name = name;
     this.calories = calories;
     this.ingredients = ingredients;
     food.push(this);
-    this.print_Ingredients = function(){
-        for(i = 0; i < this.ingredients.length; i++) {
-            console.log(this.ingredients[i]);
-        }
-    };
+    this.print_Ingredients = printIngredients(ingredients);
 }
 
 console.log("Welcome to HEAL\'s App!");
@@ -21,13 +22,12 @@ console.log("We have information about McDonald\'s food available.");
 skip_lines(1);
 // database here below
 var food = [];
-var burger = new foodMaker("burger",1234,["lettuce","tomato","patty","asdf"]);
+var burger = new foodMaker("burger",1234,["lettuce","tomato","patty"]);
 var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,["bacon","5 pounds of beef", "3 slices of cheese", "Onion Sauce", "Advocado"]);
 
 
 // database above
 
 
-console.log(food[0].name);
-console.log(food[0].print_Ingredients); // this prints "[Function]" on the console and I don't know why. Research. It does it on codecademy 2... so idk...
-console.log("What would you like to view? The healthy recipes our website also offers or Nutrition Facts about McDonald's.");
+
+console.log(food[0].print_Ingredients);
