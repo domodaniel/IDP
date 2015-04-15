@@ -1,15 +1,32 @@
+var skip_lines = function(a){
+    for(i = 0; i < a; i++){
+        console.log("");
+    }
+};
+function foodMaker(name,calories,ingredients){
+    this.name = name;
+    this.calories = calories;
+    this.ingredients = ingredients;
+    food.push(this);
+    this.printIngredients = function(){
+        for(i = 0; i < this.ingredients.length; i++) {
+            console.log(this.ingredients[i]);
+        }
+    };
+}
+
 console.log("Welcome to HEAL\'s App!");
 console.log("We are so glad that you could veiw our website.");
 console.log("We have information about McDonald\'s food available.");
-var food = ["adf",23];
-var burger = new Object();
-burger.calories = 1234;
-burger.name = "burger";
-burger.ingredients = ["lettuce","tomato","patty","asdf"];
-food.push(burger);
-var fatBurger = new Object();
-fatBurger.calories = 123456789;
-fatBurger.name = "Bacon DoubleStack TripleCheese Advocado OnionSauce Burger";
-fatBurger.ingredients = ["bacon","5 pounds of beef", "3 slices of cheese", "Onion Sauce", "Advocado"];
-food.push(fatBurger);
-console.log(food[2].ingredients[2]);
+skip_lines(1);
+// database here below
+var food = [];
+var burger = new foodMaker("burger",1234,["lettuce","tomato","patty","asdf"]);
+var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,["bacon","5 pounds of beef", "3 slices of cheese", "Onion Sauce", "Advocado"]);
+
+
+// database above
+
+
+console.log(food[0].name);
+console.log(food[0].printIngredients);
