@@ -29,4 +29,4 @@ var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauc
 
 
 console.log(food[0].name);
-console.log(food[0].print_Ingredients);
+console.log(food[0].print_Ingredients); // this prints "[Function]" on the console and I don't know why. Research. It does it on codecademy 2... so idk...
