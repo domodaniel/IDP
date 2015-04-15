@@ -8,7 +8,7 @@ function foodMaker(name,calories,ingredients){
     this.calories = calories;
     this.ingredients = ingredients;
     food.push(this);
-    this.printIngredients = function(){
+    this.print_Ingredients = function(){
         for(i = 0; i < this.ingredients.length; i++) {
             console.log(this.ingredients[i]);
         }
@@ -16,7 +16,7 @@ function foodMaker(name,calories,ingredients){
 }
 
 console.log("Welcome to HEAL\'s App!");
-console.log("We are so glad that you could veiw our website.");
+console.log("We are so glad that you could veiw our website and download this informative program.");
 console.log("We have information about McDonald\'s food available.");
 skip_lines(1);
 // database here below
@@ -29,4 +29,4 @@ var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauc
 
 
 console.log(food[0].name);
-console.log(food[0].printIngredients);
+console.log(food[0].print_Ingredients);
