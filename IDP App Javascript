@@ -3,9 +3,9 @@ var skip_lines = function(a){
         console.log("");
     }
 };
-var printIngredients = function(ingredients){
-    for(i = 0; i < ingredients.length; i++) {
-        console.log(ingredients[i]);
+var printIngredients = function(a){
+    for(i = 0; i != a.length; i++) {
+        console.log(a[i]);
     }
 };
 function foodMaker(name,calories,ingredients){
@@ -13,7 +13,6 @@ function foodMaker(name,calories,ingredients){
     this.calories = calories;
     this.ingredients = ingredients;
     food.push(this);
-    this.print_Ingredients = printIngredients(ingredients);
 }
 
 console.log("Welcome to HEAL\'s App!");
@@ -28,6 +27,5 @@ var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauc
 
 // database above
 
-
-
-console.log(food[0].print_Ingredients); 
+skip_lines(2);
+console.log(printIngredients(food[0].ingredients));
