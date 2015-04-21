@@ -1,18 +1,27 @@
+// author: Daniel Uyematsu
 var skip_lines = function(a){
     for(i = 0; i < a; i++){
         console.log("");
     }
 };
-var printIngredients = function(a){
-    for(i = 0; i != a.length; i++) {
-        console.log(a[i]);
+var printIngredients = function(ingredients){
+    for(var i in ingredients) {
+        console.log("-" + ingredients[i]);
     }
 };
-function foodMaker(name,calories,ingredients){
+function foodMaker(name,calories,ingredients,fat){
     this.name = name;
     this.calories = calories;
     this.ingredients = ingredients;
     food.push(this);
+    this.fat = fat;
+}
+function printInfo(object){
+    console.log(object.name);
+    console.log("-----------");
+    console.log("Calories: " + object.calories);
+    console.log("Ingredients:");
+    printIngredients(object.ingredients);
 }
 
 console.log("Welcome to HEAL\'s App!");
@@ -21,11 +30,19 @@ console.log("We have information about McDonald\'s food available.");
 skip_lines(1);
 // database here below
 var food = [];
-var burger = new foodMaker("burger",1234,["lettuce","tomato","patty"]);
-var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,["bacon","5 pounds of beef", "3 slices of cheese", "Onion Sauce", "Advocado"]);
+var burger = new foodMaker("burger",1234,["lettuce","tomato","patty"],34);
+var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,["bacon","5 pounds of beef", "3 slices of cheese", "Onion Sauce", "Advocado"],67);
 
 
 // database above
 
+
+// printIngredients(food[0].ingredients);
+// skip_lines(1);
+// printIngredients(food[1].ingredients);
+// console.log(food[0].fat);
+printInfo(food[0]);
 skip_lines(2);
-console.log(printIngredients(food[0].ingredients));
+printInfo(food[1]);
+
+
