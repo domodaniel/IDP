@@ -21,7 +21,6 @@ function printInfo(object){
     console.log("Calories: " + object.calories);
     console.log("Fat: " + object.fat + "g");
 }
-
 console.log("Welcome to HEAL\'s App!");
 console.log("We are so glad that you could veiw our website and download this informative program.");
 console.log("We have information about McDonald\'s food available.");
@@ -33,9 +32,11 @@ var food = [];
 // var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,67);
 var BaconClubhouseBurger = new foodMaker("Bacon Clubhouse Burger", 720, 40);
 var BaconClubhouseGrilledChickenSandwich = new foodMaker("Bacon Clubhouse Grilled Chicken Sandwich",610,26);
-var 
+var McChicken = new foodMaker("McChicken",370,17);
 // database above
 
 printInfo(food[0]);
 skip_lines(2);
 printInfo(food[1]);
+skip_lines(2);
+printInfo(food[2]);
