@@ -9,10 +9,9 @@ var printIngredients = function(ingredients){
         console.log("-" + ingredients[i]);
     }
 };
-function foodMaker(name,calories,ingredients,fat){
+function foodMaker(name,calories,fat){
     this.name = name;
     this.calories = calories;
-    this.ingredients = ingredients;
     food.push(this);
     this.fat = fat;
 }
@@ -20,8 +19,7 @@ function printInfo(object){
     console.log(object.name);
     console.log("-----------");
     console.log("Calories: " + object.calories);
-    console.log("Ingredients:");
-    printIngredients(object.ingredients);
+    console.log("Fat: " + object.fat + "g");
 }
 
 console.log("Welcome to HEAL\'s App!");
@@ -30,19 +28,14 @@ console.log("We have information about McDonald\'s food available.");
 skip_lines(1);
 // database here below
 var food = [];
-var burger = new foodMaker("burger",1234,["lettuce","tomato","patty"],34);
-var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,["bacon","5 pounds of beef", "3 slices of cheese", "Onion Sauce", "Advocado"],67);
-
-
+    //  examples!!!!!!!!!!!!
+// var burger = new foodMaker("burger",1234,34);
+// var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,67);
+var BaconClubhouseBurger = new foodMaker("Bacon Clubhouse Burger", 720, 40);
+var BaconClubhouseGrilledChickenSandwich = new foodMaker("Bacon Clubhouse Grilled Chicken Sandwich",610,26);
+var 
 // database above
 
-
-// printIngredients(food[0].ingredients);
-// skip_lines(1);
-// printIngredients(food[1].ingredients);
-// console.log(food[0].fat);
 printInfo(food[0]);
 skip_lines(2);
 printInfo(food[1]);
-
-
