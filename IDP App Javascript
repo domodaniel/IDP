@@ -35,6 +35,27 @@ var BaconClubhouseGrilledChickenSandwich = new foodMaker("Bacon Clubhouse Grille
 var McChicken = new foodMaker("McChicken",370,17);
 // database above
 
+// asking user what he or she wants to view
+b = true;
+while(b){
+    a = prompt("What would you like to view, McDonald\'s Nutrition Facts or healthy recipes?(McDonald\'s / recipes)");
+    while(a!="McDonald\'s" && a != "recipes"){
+        a = prompt("What would you like to view, McDonald\'s Nutrition Facts or healthy recipes?(McDonald\'s / recipes)");
+        if(a!="McDonald\'s" && a != "recipes"){
+            console.log("I didn't get that. Please type \"McDonald\'s\" or \"recipes\"")
+        } else{
+            c = confirm("You have chosen to look at " + a + ". Are you sure you want to do this?");
+            if(c){
+                b  = false;
+            }
+            else{
+                b = true;
+            }
+        }
+    }
+}
+
+skip_lines(1);
 printInfo(food[0]);
 skip_lines(2);
 printInfo(food[1]);
