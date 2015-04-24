@@ -1,22 +1,108 @@
-McDfood = ["burger", "another burger"]
-calories = {"burger":1234, "another burger": 2331297}
-def print_McDfood(food_list):
-  for a in range(leng(food_list)):
-    print food_list[a]
-a = True
-while a:
-  check = True
-  while check:
-    choice = raw_input("Would you like to find out information about McDonald's menu or look at recipes?")
-    if choice == "McDonald's Menu":
-      print "You have chosen to look at McDonald's Menu's nutrition facts."
-      check = False
-    elif choice == "recipes":
-      print "You have chosen to view recipes."
-      check = False
-    else:
-      print 'Please type "McDonald\'s Menu" or "recipes" to make your choice.'
-  check2 = True
-  if choice == "McDonald's Menu":
-    while check2:
-      McD_food = raw_input("What food would you like to find out about?" + print_McDfood(McDfood))
+// author: Daniel Uyematsu
+var skip_lines = function(a){
+    for(i = 0; i < a; i++){
+        console.log("");
+    }
+};
+var printList = function(list){
+    for(var i in list) {
+        console.log("-" + list[i]);
+    }
+};
+function foodMaker(name,calories,fat,sodium){
+    this.name = name;
+    this.calories = calories;
+    this.caloriepercentage = 100*calories/2000;
+    this.fat = fat;
+    this.fatpercentage = 100*fat/65;
+    this.sodium = sodium;
+    this.sodiumpercentage = 100*sodium/2400;
+    food.push(this);
+    foodnames.push(name);
+};
+function printInfo(asdf){
+    skip_lines(1);
+    console.log(asdf.name);
+    console.log("-----------");
+    console.log("Calories: " + asdf.calories);
+    console.log("Calories Daily Percentage: " + asdf.caloriepercentage + "%");
+    console.log("Fat: " + asdf.fat + "g");
+    console.log("Fat Daily Percentage: " + asdf.fatpercentage + "%");
+    console.log("Sodium: " + asdf.sodium + "mg");
+    console.log("Sodium Daily Percentage: "+asdf.sodiumpercentage+ "%");
+    skip_lines(1);
+};
+
+
+
+
+
+
+
+console.log("Welcome to HEAL\'s App!");
+console.log("We are so glad that you could veiw our website and download this informative program.");
+console.log("We have information about McDonald\'s food available.");
+skip_lines(1);
+
+
+
+
+
+
+// database here below
+
+//name, calories, fat, sodium
+var food = [];
+var foodnames = [];
+var BaconClubhouseBurger = new foodMaker("Bacon Clubhouse Burger", 720, 40,1470);
+var BaconClubhouseGrilledChickenSandwich = new foodMaker("Bacon Clubhouse Grilled Chicken Sandwich",610,26,1720);
+var BaconClubhouseGrilledChickenSandwich = new foodMaker("Bacon  Clubhouse Grilled Chicken Sandwich",750,38,1720);
+var McChicken = new foodMaker("McChicken",370,17,650);
+var BuffaloRanchMcChicken = new foodMaker("Buffalo Ranch McChicken",370,17,850);
+var SmallFrenchFries = new foodMaker("Small French Fries", 230,11,130);
+var MediumFrenchFries = new foodMaker("Medium French Fries", 340,16,190);
+var LargeFrenchFries = new foodMaker("Large French Fries", 510,24,290);
+
+
+// database above
+
+
+
+
+
+
+// asking user what he or she wants to view
+b = true;
+while(b){
+    z = true;
+    while(z){
+        a = prompt("What would you like to view, McDonald\'s Nutrition Facts or healthy recipes?(McDonald\'s / recipes)");
+        if(a!="McDonald\'s" && a != "recipes"){
+            console.log("I didn't get that. Please type \"McDonald\'s\" or \"recipes\"");
+        } else{
+            c = confirm("You have chosen to look at " + a + ". Are you sure you want to do this?");
+            if(c){
+                b = false;
+                z = false;
+            } else{
+                b = true;
+            }
+        }
+    }
+}
+
+
+if(a == "McDonald\'s"){
+    e = true;
+    while(e){
+        printList(foodnames);
+        d = prompt("Which food would you like to find out about?");
+        if(foodnames.indexOf(d) >= 0){
+            printInfo(food[foodnames.indexOf(d)]);
+            e = false;
+        } else{
+            console.log("I\'m sorry I didn\'t get that.");
+            console.log("You said  \"" + d + "\".");
+        }
+    }
+}
