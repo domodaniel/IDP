@@ -4,60 +4,100 @@ var skip_lines = function(a){
         console.log("");
     }
 };
-var printIngredients = function(ingredients){
-    for(var i in ingredients) {
-        console.log("-" + ingredients[i]);
+var printList = function(list){
+    for(var i in list) {
+        console.log("-" + list[i]);
     }
 };
-function foodMaker(name,calories,fat){
+function foodMaker(name,calories,fat,sodium){
     this.name = name;
     this.calories = calories;
-    food.push(this);
+    this.caloriepercentage = 100*calories/2000;
     this.fat = fat;
-}
-function printInfo(object){
-    console.log(object.name);
+    this.fatpercentage = 100*fat/65;
+    this.sodium = sodium;
+    this.sodiumpercentage = 100*sodium/2400;
+    food.push(this);
+    foodnames.push(name);
+};
+function printInfo(asdf){
+    skip_lines(1);
+    console.log(asdf.name);
     console.log("-----------");
-    console.log("Calories: " + object.calories);
-    console.log("Fat: " + object.fat + "g");
-}
+    console.log("Calories: " + asdf.calories);
+    console.log("Calories Daily Percentage: " + asdf.caloriepercentage + "%");
+    console.log("Fat: " + asdf.fat + "g");
+    console.log("Fat Daily Percentage: " + asdf.fatpercentage + "%");
+    console.log("Sodium: " + asdf.sodium + "mg");
+    console.log("Sodium Daily Percentage: "+asdf.sodiumpercentage+ "%");
+    skip_lines(1);
+};
+
+
+
+
+
+
+
 console.log("Welcome to HEAL\'s App!");
 console.log("We are so glad that you could veiw our website and download this informative program.");
 console.log("We have information about McDonald\'s food available.");
 skip_lines(1);
+
+
+
+
+
+
 // database here below
+
+
 var food = [];
-    //  examples!!!!!!!!!!!!
-// var burger = new foodMaker("burger",1234,34);
-// var fatBurger = new foodMaker("Bacon DoubleStack TripleCheese Advocado OnionSauce Burger", 123456789,67);
-var BaconClubhouseBurger = new foodMaker("Bacon Clubhouse Burger", 720, 40);
-var BaconClubhouseGrilledChickenSandwich = new foodMaker("Bacon Clubhouse Grilled Chicken Sandwich",610,26);
-var McChicken = new foodMaker("McChicken",370,17);
+var foodnames = [];
+var BaconClubhouseBurger = new foodMaker("Bacon Clubhouse Burger", 720, 40,1470);
+var BaconClubhouseGrilledChickenSandwich = new foodMaker("Bacon Clubhouse Grilled Chicken Sandwich",610,26,1720);
+var McChicken = new foodMaker("McChicken",370,17,650);
+
+
 // database above
+
+
+
+
+
 
 // asking user what he or she wants to view
 b = true;
 while(b){
-    a = prompt("What would you like to view, McDonald\'s Nutrition Facts or healthy recipes?(McDonald\'s / recipes)");
-    while(a!="McDonald\'s" && a != "recipes"){
+    z = true;
+    while(z){
         a = prompt("What would you like to view, McDonald\'s Nutrition Facts or healthy recipes?(McDonald\'s / recipes)");
         if(a!="McDonald\'s" && a != "recipes"){
-            console.log("I didn't get that. Please type \"McDonald\'s\" or \"recipes\"")
+            console.log("I didn't get that. Please type \"McDonald\'s\" or \"recipes\"");
         } else{
             c = confirm("You have chosen to look at " + a + ". Are you sure you want to do this?");
             if(c){
-                b  = false;
-            }
-            else{
+                b = false;
+                z = false;
+            } else{
                 b = true;
             }
         }
     }
 }
 
-skip_lines(1);
-printInfo(food[0]);
-skip_lines(2);
-printInfo(food[1]);
-skip_lines(2);
-printInfo(food[2]);
+
+if(a == "McDonald\'s"){
+    e = true;
+    while(e){
+        printList(foodnames);
+        d = prompt("Which food would you like to find out about?");
+        if(foodnames.indexOf(d) >= 0){
+            printInfo(food[foodnames.indexOf(d)]);
+            e = false;
+        } else{
+            console.log("I\'m sorry I didn\'t get that.");
+            console.log("You said  \"" + d + "\".");
+        }
+    }
+}
